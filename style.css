@@ -1,5 +1,5 @@
 body{
-    background-color: hsl(206, 96%, 10%);
+    background: linear-gradient(145deg, #3b5998, #4a69ad);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -20,24 +20,37 @@ body{
     gap: 12px;
 }
 .cell{
-    border: 1px solid hsl(206, 96%, 10%);
-    height: 75px;
-    width: 75px;
-    line-height: 70px;
-    font-size: 40px;
+    height: 80px;
+    width: 80px;
+    font-size: 42px;
     font-weight: bold;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
-    background-color: rgb(50, 71, 139);   
+    border-radius: 16px;
+    background: rgb(50, 71, 139);
     cursor: pointer;
-    transition: 0.5s background;
-   
+
+    transition: 
+      transform 0.15s ease,
+      background-color 0.3s ease,
+      box-shadow 0.2s ease;
 }
+.cell.X {
+    color: #4fc3f7;
+}
+
+.cell.O {
+    color: #ff79c6;
+}
+
 .cell:hover{
-    background-color:  hsl(206, 81%, 60%);
+    background-color: hsl(206, 81%, 60%);
+    transform: scale(1.05);
+}
+
+.cell:active{
+    transform: scale(0.95);
 }
 #header{
     font-size: 40px;
@@ -64,8 +77,13 @@ button{
 }
 button:hover{
     background-color: hsl(206, 81%, 60%);
+    transform: translateY(-2px);
 }
+
 #statusTxt{
     color: white;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
+    margin: 20px 0;
+    font-size: 18px;
+    min-height: 24px;
 }
